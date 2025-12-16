@@ -17,19 +17,18 @@ test.describe('Login Page Tests', () => {
     test('Failed login with invalid credentials', async({page}) => {
         await loginPage.doLogin("Gregoire", "123456");
         page.once("dialog", async (dialog) => {
-          expect(dialog.message()).toContain(
-            "Please fill out Username and Password."
-          ); // or expected text
+          expect(dialog.message()).toContain("Please fill out Username and Password."); // or expected text
           await dialog.accept(); // close popup
         });
     })
 
     test('Failed login with empty credential fields', async({page})=>{
-        page.once("dialog", async (dialog) => {
+       await loginPage.doLogin("", "");  
+      page.once("dialog", async (dialog) => {
           expect(dialog.message()).toContain("Please fill out Username and Password."); // adjust text
           await dialog.accept();
         });
-        await loginPage.doLogin("", "");
+       
     })
     
 })
