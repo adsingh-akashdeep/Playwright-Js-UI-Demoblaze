@@ -15,6 +15,7 @@ export class LoginPage extends WebPage {
   }
 
   async doLogin(username, password) {
+    await this.usernameInput.waitFor({state: 'visible'});
     await this.usernameInput.type(username);
     await this.passwordInput.type(password);
     await this.loginButton.click();
