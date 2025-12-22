@@ -13,7 +13,7 @@ test.describe('Dashboard Page Tests',{
         dashboardPage = new DashboardPage(page);
 
         await loginPage.navigateToLoginPage();
-        await loginPage.doLogin("akashdeep1994", "1807");
+        await loginPage.doLogin("demoblaze1994", "demo");
     })
 
     test.skip('Verify if item is added to cart',{tag:'@p0'} , async({page})=>{
