@@ -10,7 +10,7 @@ test.describe('Login Page Tests',{tag:['@regression','@smoke']}, () => {
     })
 
     test('Successful login with credentials',{tag:'@p0'}, async({page})=>{
-        await loginPage.doLogin('akashdeep1994','1807');
+        await loginPage.doLogin('demoblaze1994','demo');
         await expect(page).toHaveURL('https://demoblaze.com/');
     })
 
