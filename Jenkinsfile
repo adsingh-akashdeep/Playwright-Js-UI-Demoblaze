@@ -1,17 +1,17 @@
-pipeline{
-    agent any
+pipeline {
+  agent any
 
-    stages{
-        stage('install'){
-            steps{
-                sh 'npm ci'
-            }
-        }
-
-        stage('Run Tests'){
-            steps{
-                sh 'npx playwright test'
-            }
-        }
+  stages {
+    stage('Install Dependencies') {
+      steps {
+        bat 'npm ci'
+      }
     }
-}   
+
+    stage('Run Playwright Tests') {
+      steps {
+        bat 'npx playwright test'
+      }
+    }
+  }
+}
