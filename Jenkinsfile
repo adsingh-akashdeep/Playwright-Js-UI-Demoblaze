@@ -18,6 +18,7 @@ pipeline {
     //     NODE_ENV = 'qa'
     //     ALLURE_RESULTS = 'allure-results'
     //     PLAYWRIGHT_HTML = 'playwright-report'
+    //     GIT_CREDS = credentials('GIT_CREDS_ID') // Username/password pair
     // }
 
     // triggers {
@@ -32,6 +33,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/your-org/your-playwright-repo.git'
+                     credentialsId: 'GIT_CREDS_ID'
             }
         }
 
