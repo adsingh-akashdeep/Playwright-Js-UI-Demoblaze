@@ -16,7 +16,7 @@ test.describe('Dashboard Page Tests',{
         await loginPage.doLogin("demoblaze1994", "demo");
     })
 
-    test.skip('Verify if item is added to cart',{tag:'@p0'} , async({page})=>{
+    test('Verify if item is added to cart',{tag:'@p0'} , async({page})=>{
           page.once("dialog", async (dialog) => {
             expect(dialog.message()).toContain("Product added.");
             await dialog.accept();
@@ -32,7 +32,7 @@ test.describe('Dashboard Page Tests',{
         await dashboardPage.sendNewMessageViaContactForm();
     })
 
-    test.only('Place the order from cart page', {tag:'@p2'}, async({page})=>{
+    test('Place the order from cart page', {tag:'@p2'}, async({page})=>{
         page.once("dialog", async(dialog)=>{
           expect(dialog.message()).toContain("Product added.")
           await dialog.accept();
