@@ -33,24 +33,16 @@ pipeline {
             steps {
                 bat '''
                     npm ci
-                    npx playwright install --with-deps
+                    npx playwright install
                 '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                script {
-                    if (params.TEST_TYPE == 'smoke') {
-                        bat '''
-                            npx playwright test --grep @smoke --reporter=allure-playwright
-                        '''
-                    } else {
-                        bat '''
-                            npx playwright test --grep @regression --reporter=allure-playwright
-                        '''
-                    }
-                }
+                bat """
+                    npx playwright test
+                """
             }
         }
 
