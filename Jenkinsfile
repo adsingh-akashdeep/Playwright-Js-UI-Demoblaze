@@ -33,7 +33,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/your-org/your-playwright-repo.git'
-                     credentialsId: 'GIT_CREDS_ID'
+                    // credentialsId: 'GIT_CREDS_ID'
             }
         }
 
