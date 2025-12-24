@@ -2,6 +2,7 @@ pipeline {
   agent any
 
  environment {
+        CI = true
         PLAYWRIGHT_BROWSERS_PATH = "0"
         }
 
