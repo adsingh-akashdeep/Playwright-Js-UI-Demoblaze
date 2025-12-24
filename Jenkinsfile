@@ -1,11 +1,11 @@
 pipeline {
   agent any
 
-  stages {
-
-        environment {
+ environment {
         PLAYWRIGHT_BROWSERS_PATH = "0"
         }
+
+  stages {
 
         stage('Install Dependencies') {
             steps {
