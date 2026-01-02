@@ -27,7 +27,7 @@ test.describe('Dashboard Page Tests',{
           await dashboardPage.addSonyVaioI7ToCart();
      })
 
-    test.only('Verify user can send a message successfully via contact form ',{tag: '@p1'},async({page})=>{
+    test('Verify user can send a message successfully via contact form ',{tag: '@p1'},async({page})=>{
          page.once("dialog",async(dialog)=>{
           expect(dialog.message()).toContain("Thanks for the message!!");
           await dialog.accept();
