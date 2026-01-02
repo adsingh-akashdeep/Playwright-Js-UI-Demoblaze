@@ -9,8 +9,11 @@ test.describe('Login Page Tests',{tag:['@regression','@smoke']}, () => {
         loginPage.navigateToLoginPage();
     })
 
-    test('Successful login with credentials',{tag:'@p0'}, async({page})=>{
-        await loginPage.doLogin('demoblaze1994','demo');
+    test.only('Successful login with credentials',{tag:'@p0'}, async({page})=>{
+        await loginPage.doLogin(
+            process.env.USERNAME, 
+            process.env.PASSWORD
+        );
         await expect(page).toHaveURL('https://demoblaze.com/');
     })
 

@@ -13,7 +13,10 @@ test.describe('Dashboard Page Tests',{
         dashboardPage = new DashboardPage(page);
 
         await loginPage.navigateToLoginPage();
-        await loginPage.doLogin("demoblaze1994", "demo");
+        await loginPage.doLogin(
+          process.env.USERNAME,
+          process.env.PASSWORD
+        );
     })
 
     test('Verify if item is added to cart',{tag:'@p0'} , async({page})=>{
@@ -24,7 +27,7 @@ test.describe('Dashboard Page Tests',{
           await dashboardPage.addSonyVaioI7ToCart();
      })
 
-    test('Verify user can send a message successfully via contact form ',{tag: '@p1'},async({page})=>{
+    test.only('Verify user can send a message successfully via contact form ',{tag: '@p1'},async({page})=>{
          page.once("dialog",async(dialog)=>{
           expect(dialog.message()).toContain("Thanks for the message!!");
           await dialog.accept();
