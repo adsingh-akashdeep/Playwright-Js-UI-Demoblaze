@@ -6,3 +6,9 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Environment variables
+.env.dev
+.env.qa
+.env.prod
+.env.stg
